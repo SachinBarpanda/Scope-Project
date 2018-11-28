@@ -14,5 +14,10 @@ public class Main {
          * */
 
         System.out.println(privateVar);
+        scope.timesTwo();
+
+        System.out.println("**********************************");
+        ScopeCheck.InnerClass innerscope=scope.new InnerClass();
+        innerscope.timesTwo();
     }
 }
