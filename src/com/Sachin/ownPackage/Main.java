@@ -6,8 +6,8 @@ public class Main {
         String privateVar ="THis private is in main()";
 
         ScopeCheck scope=new ScopeCheck();
-        System.out.println("In class ScopeCheck the private variable "+scope.getPrivateVar());
-
+        System.out.println("In class ScopeCheck the private variable "+scope.getVarOne());
+        scope.useInnerClass();
         /**
          * Java knows which private variable belongs to whom
          * So the line below this will print privateVar of the main method

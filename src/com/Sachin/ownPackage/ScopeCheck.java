@@ -2,7 +2,7 @@ package com.Sachin.ownPackage;
 
 public class ScopeCheck {
     public int publicVar=0;
-    private int privateVar=1;
+    private int varOne =1;//previously privateVar=1
 
     /**
      * Checking on how scope works!
@@ -10,11 +10,20 @@ public class ScopeCheck {
 
     public ScopeCheck(){
         System.out.println("scope created public Variable:"+ publicVar+" ScopeChecked " +
-                "private Variable "+ privateVar);
+                "private Variable "+ varOne);
     }
-    public int getPrivateVar(){
-        return privateVar;
+    public int getVarOne(){
+        return varOne;
     }
+
+    /**
+     * Let's now check the scope of innerClass in the ScopeCheck class
+     * */
+    public void useInnerClass(){
+        InnerClass innerC=new InnerClass();
+        System.out.println("Value of the scope in the inner Class"+innerC.varThree);
+    }
+
 
     /**
      * Let's now see the scope of the local variable in the methods
@@ -23,13 +32,13 @@ public class ScopeCheck {
      * */
 
     public void timesTwo(){
-        int privateVar=2;
+        int varTwo=2;//previously privateVar=1
         for(int i=0;i<10;i++){
             /**
              * this.privateVar is used for making the
              * variable call from the main declaration
              * */
-            System.out.println(i + "times two is" + i* privateVar);
+            System.out.println(i + "times two is" + i* varTwo);
         }
     }
     /**
@@ -38,14 +47,15 @@ public class ScopeCheck {
      * */
 
     public class InnerClass{
-        public int privateVar=3;
+        public int varThree =3;//previously privateVar=1
         public InnerClass(){
-            System.out.println("InnerClass created,private Variable"+ privateVar);
+            System.out.println("InnerClass created,private Variable "+ varThree+" ScopeCheck class" +
+                    "variable is "+varOne);
         }
         public void timesTwo(){
 
             for(int i=0;i<10;i++){
-            System.out.println(i + "times two is" + i* privateVar);
+            System.out.println(i + "times two is" + i* varThree);
         }
     }
 }}
